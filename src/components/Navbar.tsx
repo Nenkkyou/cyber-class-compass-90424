@@ -34,6 +34,11 @@ const Navbar = memo(() => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-2"
           >
+            <img 
+              src="/cyberclass-logo.png" 
+              alt="CyberClass Logo" 
+              className="w-8 h-8"
+            />
             <span className="text-xl font-bold">
               <span className="text-amber-neon">Cyber</span>
               <span className="text-foreground">Class</span>
