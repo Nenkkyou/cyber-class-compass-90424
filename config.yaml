@@ -1,0 +1,11 @@
+# CyberClass - Configuração do Site
+site:
+  name: "CyberClass"
+  title: "CyberClass - Cursos de Cibersegurança"
+  description: "Aprenda cibersegurança com os melhores especialistas do Brasil"
+  url: "https://www.cyberclass.com.br"
+  
+server:
+  host: "0.0.0.0"
+  port: 5000
+  debug: false

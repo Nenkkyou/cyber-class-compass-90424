@@ -145,31 +145,16 @@ const ContactSection = memo(() => {
             {/* Social Media */}
             <div className="bg-card p-6 rounded-lg border border-border">
               <h3 className="text-xl font-semibold mb-4">Redes Sociais</h3>
-              <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <Button
-                    variant="navy"
-                    onClick={openInstagram}
-                    className="justify-start"
-                  >
-                    <Instagram className="w-4 h-4 mr-2" />
-                    Instagram
-                  </Button>
-                  <Button
-                    variant="navy"
-                    onClick={() => window.open('https://t.me/pdfstore_cyberclass_bot', '_blank')}
-                    className="justify-start"
-                  >
-                    <Send className="w-4 h-4 mr-2" />
-                    PDF STORE
-                  </Button>
-                </div>
+              <div className="grid grid-cols-2 gap-4">
                 <Button
-                  variant="glow"
-                  className="w-full justify-center"
+                  variant="navy"
+                  onClick={openInstagram}
+                  className="justify-start"
                 >
-                  Solicitar Serviço
+                  <Instagram className="w-4 h-4 mr-2" />
+                  Instagram
                 </Button>
+                
               </div>
             </div>
 
@@ -212,6 +197,22 @@ const ContactSection = memo(() => {
         </div>
       </div>
 
+      {/* Floating WhatsApp Button */}
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.6, delay: 1 }}
+        className="fixed bottom-6 right-6 z-50"
+      >
+        <Button
+          variant="cyber"
+          size="lg"
+          onClick={openWhatsApp}
+          className="rounded-full w-14 h-14 p-0 shadow-lg hover:shadow-amber-neon/25"
+        >
+          <MessageCircle className="w-6 h-6" />
+        </Button>
+      </motion.div>
     </section>
   );
 });

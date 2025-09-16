@@ -33,7 +33,7 @@ const ServicesSection = memo(() => {
       details: "Aprenda os fundamentos da inteligência artificial de forma prática e acessível. Nossos cursos são projetados para pessoas sem background técnico, abordando desde conceitos básicos até aplicações práticas no dia a dia.",
       features: ["Aulas online e presenciais", "Material didático exclusivo", "Exercícios práticos", "Certificado de conclusão", "Suporte individualizado"],
       whatsapp: "552199974421",
-      telegram: "@cyberclass_ia"
+      telegram: "@CyberClass_Company"
     },
     {
       icon: Users,
@@ -42,7 +42,7 @@ const ServicesSection = memo(() => {
       details: "Sessões individuais de mentoria para acelerar seu aprendizado em IA. Desenvolvimento de projetos personalizados e orientação técnica especializada.",
       features: ["Mentoria individual", "Modalidade online e presencial", "Projetos práticos", "Acompanhamento contínuo", "Networking com especialistas"],
       whatsapp: "552199974421",
-      telegram: "@cyberclass_mentoria"
+      telegram: "@CyberClass_Company"
     },
     {
       icon: Headphones,
@@ -51,7 +51,7 @@ const ServicesSection = memo(() => {
       details: "Suporte técnico completo para resolução de problemas tecnológicos. Atendimento remoto e presencial para empresas e usuários finais.",
       features: ["Suporte online e presencial", "Atendimento 24/7", "Diagnóstico remoto", "Manutenção preventiva", "Suporte multicanal"],
       whatsapp: "552199974421",
-      telegram: "@cyberclass_support"
+      telegram: "@CyberClass_Company"
     },
     {
       icon: MessageCircleCode,
@@ -60,7 +60,7 @@ const ServicesSection = memo(() => {
       details: "Soluções personalizadas de consultoria tecnológica e treinamentos corporativos. Desenvolvimento de estratégias digitais para empresas.",
       features: ["Consultoria especializada", "Treinamentos corporativos", "Modalidade online e presencial", "Planejamento estratégico", "Implementação personalizada"],
       whatsapp: "552199974421",
-      telegram: "@cyberclass_consultoria"
+      telegram: "@CyberClass_Company"
     },
     {
       icon: Shield,
@@ -69,7 +69,7 @@ const ServicesSection = memo(() => {
       details: "Proteção completa contra ameaças digitais com práticas de segurança, auditorias técnicas e prevenção de riscos. Mantenha seus dados e sistemas seguros.",
       features: ["Auditoria de segurança", "Prevenção de ameaças", "Treinamento em segurança", "Políticas de proteção", "Monitoramento contínuo"],
       whatsapp: "552199974421",
-      telegram: "@cyberclass_security"
+      telegram: "@CyberClass_Company"
     },
     {
       icon: Code,
@@ -78,7 +78,7 @@ const ServicesSection = memo(() => {
       details: "Criação de soluções tecnológicas personalizadas, incluindo sistemas corporativos e agentes de IA adaptados às necessidades específicas do seu negócio.",
       features: ["Sistemas personalizados", "Agentes de IA", "Desenvolvimento full-stack", "Integração de APIs", "Manutenção e suporte"],
       whatsapp: "552199974421",
-      telegram: "@cyberclass_dev"
+      telegram: "@CyberClass_Company"
     },
     {
       icon: Wrench,
@@ -87,7 +87,7 @@ const ServicesSection = memo(() => {
       details: "Serviços de manutenção tecnológica para empresas e usuários finais. Desde configuração de equipamentos até otimização de sistemas e redes.",
       features: ["Manutenção preventiva", "Configuração de equipamentos", "Otimização de sistemas", "Suporte a empresas", "Atendimento domiciliar"],
       whatsapp: "552199974421",
-      telegram: "@cyberclass_manutencao"
+      telegram: "@CyberClass_Company"
     },
     {
       icon: FileText,
@@ -96,7 +96,7 @@ const ServicesSection = memo(() => {
       details: "Loja de materiais digitais com conteúdo exclusivo da CyberClass. Guias práticos, exercícios, tutoriais e materiais de estudo desenvolvidos por nossa equipe.",
       features: ["Materiais originais", "Guias práticos", "Exercícios exclusivos", "Tutoriais passo a passo", "Atualizações constantes"],
       whatsapp: "552199974421",
-      telegram: "@cyberclass_store"
+      telegram: "@pdfstore_cyberclass_bot"
     }
   ];
 

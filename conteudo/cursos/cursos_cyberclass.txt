@@ -1,0 +1,35 @@
+
+    CYBERCLASS - CURSOS DE CIBERSEGURANÇA
+    
+    CURSOS DISPONÍVEIS:
+    
+    1. FUNDAMENTOS DE CIBERSEGURANÇA
+    - Duração: 40 horas
+    - Nível: Iniciante
+    - Conteúdo: Conceitos básicos, ameaças, proteção de dados
+    - Certificação: Sim
+    
+    2. ETHICAL HACKING
+    - Duração: 60 horas
+    - Nível: Intermediário
+    - Conteúdo: Testes de penetração, vulnerabilidades, ferramentas
+    - Certificação: Sim
+    
+    3. FORENSE DIGITAL
+    - Duração: 50 horas
+    - Nível: Avançado
+    - Conteúdo: Investigação digital, evidências, análise
+    - Certificação: Sim
+    
+    COMO SE INSCREVER:
+    1. Acesse nosso site: www.cyberclass.com.br
+    2. Escolha o curso desejado
+    3. Preencha o formulário de inscrição
+    4. Efetue o pagamento
+    5. Receba o acesso ao material
+    
+    SUPORTE:
+    - Email: suporte@cyberclass.com.br
+    - WhatsApp: (11) 99999-9999
+    - Horário: Segunda a Sexta, 8h às 18h
+    
