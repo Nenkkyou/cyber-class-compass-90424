@@ -8,7 +8,7 @@ const ServicesSection = lazy(() => import("@/components/ServicesSection"));
 const PortfolioShowcase = lazy(() => import("@/components/PortfolioShowcase"));
 const PDFStoreSection = lazy(() => import("@/components/PDFStoreSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
-const MiniChat = lazy(() => import("@/components/MiniChat"));
+
 
 const LoadingSpinner = () => (
   <div className="animate-pulse bg-muted/30 h-32 rounded-lg flex items-center justify-center">
@@ -35,9 +35,6 @@ const Index = memo(() => {
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
         <ContactSection />
-      </Suspense>
-      <Suspense fallback={<div />}>
-        <MiniChat />
       </Suspense>
     </div>
   );
