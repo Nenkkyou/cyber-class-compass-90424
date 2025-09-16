@@ -22,6 +22,7 @@ import {
   FileText,
   Users
 } from "lucide-react";
+import ServiceRequestModal from "./ServiceRequestModal";
 
 const ServicesSection = memo(() => {
 
@@ -177,24 +178,27 @@ const ServicesSection = memo(() => {
                     </div>
 
                     <div className="flex gap-2 pt-4">
-                      <Button
-                        variant="cyber"
-                        size="sm"
-                        onClick={() => openWhatsApp(service.whatsapp, service.title)}
-                        className="flex-1"
-                      >
-                        <Phone className="w-4 h-4 mr-2" />
-                        WhatsApp
-                      </Button>
-                      <Button
-                        variant="navy"
-                        size="sm"
-                        onClick={() => openTelegram(service.telegram)}
-                        className="flex-1"
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Telegram
-                      </Button>
+                      {service.title === "PDF Store" ? (
+                        <Button
+                          variant="navy"
+                          size="sm"
+                          onClick={() => openTelegram(service.telegram)}
+                          className="w-full"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Telegram
+                        </Button>
+                      ) : (
+                        <ServiceRequestModal 
+                          prefilledServiceType={service.title}
+                          trigger={
+                            <Button variant="glow" size="sm" className="w-full">
+                              <Wrench className="w-4 h-4 mr-2" />
+                              Solicitar Serviço
+                            </Button>
+                          }
+                        />
+                      )}
                     </div>
                   </div>
                 </DialogContent>

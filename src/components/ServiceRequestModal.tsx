@@ -55,9 +55,10 @@ const serviceTypes = [
 
 interface ServiceRequestModalProps {
   trigger?: React.ReactNode;
+  prefilledServiceType?: string;
 }
 
-const ServiceRequestModal = memo(({ trigger }: ServiceRequestModalProps) => {
+const ServiceRequestModal = memo(({ trigger, prefilledServiceType }: ServiceRequestModalProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { toast } = useToast();
@@ -69,7 +70,7 @@ const ServiceRequestModal = memo(({ trigger }: ServiceRequestModalProps) => {
       lastName: "",
       email: "",
       phone: "",
-      serviceType: "",
+      serviceType: prefilledServiceType || "",
       description: "",
     },
   });

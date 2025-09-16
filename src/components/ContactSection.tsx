@@ -128,7 +128,7 @@ const ContactSection = memo(() => {
                   className="w-full justify-start"
                 >
                   <MessageCircle className="w-5 h-5 mr-3" />
-                  WhatsApp: (21) 99997-4421
+                  WhatsApp
                 </Button>
                 
                 <Button
