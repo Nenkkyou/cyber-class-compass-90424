@@ -249,18 +249,6 @@ const PortfolioShowcase = memo(() => {
           )}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="text-center mt-12"
-        >
-          <Button variant="glow" size="lg">
-            <ExternalLink className="w-4 h-4 mr-2" />
-            Ver Galeria Completa
-          </Button>
-        </motion.div>
       </div>
     </section>
   );
