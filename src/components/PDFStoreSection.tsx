@@ -50,8 +50,8 @@ const PDFStoreSection = memo(() => {
   ];
 
   const handlePurchase = useCallback((title: string, price: string) => {
-    // Funcionalidade de compra removida - sem bot
-    console.log(`Compra solicitada: ${title} - ${price}`);
+    // Abre o bot do PDF Store no Telegram
+    window.open('https://t.me/pdfstore_cyberclass_bot', '_blank');
   }, []);
 
   const getCategoryIcon = (category: string) => {
