@@ -24,6 +24,7 @@ import {
   Phone,
   MapPin
 } from "lucide-react";
+import ServiceRequestModal from "./ServiceRequestModal";
 
 const formSchema = z.object({
   name: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
@@ -145,16 +146,17 @@ const ContactSection = memo(() => {
             {/* Social Media */}
             <div className="bg-card p-6 rounded-lg border border-border">
               <h3 className="text-xl font-semibold mb-4">Redes Sociais</h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
                 <Button
                   variant="navy"
                   onClick={openInstagram}
-                  className="justify-start"
+                  className="w-full justify-start"
                 >
                   <Instagram className="w-4 h-4 mr-2" />
                   Instagram
                 </Button>
                 
+                <ServiceRequestModal />
               </div>
             </div>
 

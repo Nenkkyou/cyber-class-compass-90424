@@ -24,6 +24,7 @@ import {
   Phone,
   MapPin
 } from "lucide-react";
+import ServiceRequestModal from "./ServiceRequestModal";
 
 const formSchema = z.object({
   name: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
@@ -164,12 +165,7 @@ const ContactSection = memo(() => {
                     PDF STORE
                   </Button>
                 </div>
-                <Button
-                  variant="glow"
-                  className="w-full justify-center"
-                >
-                  Solicitar Serviço
-                </Button>
+                 <ServiceRequestModal />
               </div>
             </div>
 
