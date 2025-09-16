@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cyber Class Design System - Black predominant with navy and neon amber */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 45% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 45 100% 50%;
+
+    --navy: 220 45% 20%;
+    --navy-dark: 220 45% 12%;
+    --amber-neon: 45 100% 50%;
+    --amber-glow: 45 100% 60%;
+
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(0 0% 0%), hsl(220 45% 15%));
+    --gradient-amber: linear-gradient(135deg, hsl(45 100% 50%), hsl(45 100% 60%));
+    --gradient-glow: radial-gradient(circle, hsl(45 100% 50% / 0.1), transparent);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Same as light mode for Cyber Class - always dark theme */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 45% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 45 100% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    cursor: default !important; /* Remove cursor customizado */
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    cursor: default !important; /* Remove cursor customizado */
+  }
+
+  html {
+    scroll-behavior: smooth;
+    cursor: default !important; /* Remove cursor customizado */
+  }
+}
+
+@layer components {
+  /* Performance-optimized cyber glow effect */
+  .cyber-glow {
+    position: relative;
+    will-change: opacity;
+  }
+  
+  .cyber-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: var(--gradient-amber);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    will-change: opacity;
+    backface-visibility: hidden;
+  }
+  
+  .cyber-glow:hover::before {
+    opacity: 0.3;
+  }
+
+  /* Optimized text glow */
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--amber-neon) / 0.5);
+    will-change: text-shadow;
+  }
+
+  /* GPU-accelerated gradients */
+  .bg-cyber-gradient {
+    background: var(--gradient-cyber);
+    will-change: background;
+    backface-visibility: hidden;
+  }
+
+  .bg-amber-gradient {
+    background: var(--gradient-amber);
+    will-change: background;
+    backface-visibility: hidden;
+  }
+
+  /* Performance-optimized animations */
+  .animate-fade-in-fast {
+    animation: fade-in-fast 0.4s ease-out;
+  }
+
+  .animate-slide-up-fast {
+    animation: slide-up-fast 0.3s ease-out;
+  }
+
+  .animate-scale-in-fast {
+    animation: scale-in-fast 0.25s ease-out;
+  }
+
+  /* Hover optimizations */
+  .hover-glow-fast {
+    transition: box-shadow 0.2s ease;
+    will-change: box-shadow;
+  }
+
+  .hover-glow-fast:hover {
+    box-shadow: 0 0 20px hsl(var(--amber-neon) / 0.2);
+  }
+
+  /* Hardware acceleration helpers */
+  .gpu-accelerated {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+}
