@@ -111,19 +111,23 @@ const ServicesSection = memo(() => {
   }, []);
 
   return (
-    <section id="servicos" className="py-20 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="text-center mb-16 gpu-accelerated"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Nossos <span className="text-amber-neon">Serviços</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+    <>
+      {/* Gradient separator before section */}
+      <div className="h-24 bg-gradient-to-b from-background to-white"></div>
+      
+      <section id="servicos" className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-50px" }}
+            className="text-center mb-16 gpu-accelerated"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-black">Nossos </span><span className="text-amber-neon">Serviços</span>
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Soluções completas para suas necessidades digitais, desde aprendizado até suporte técnico
           </p>
         </motion.div>
@@ -138,76 +142,80 @@ const ServicesSection = memo(() => {
               viewport={{ once: true, margin: "-50px" }}
               className="bg-card p-6 rounded-lg border border-border hover:border-amber-neon/50 transition-all duration-200 group h-full flex flex-col gpu-accelerated"
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-amber-neon/10 rounded-lg mb-6 group-hover:bg-amber-neon/20 transition-colors duration-300 flex-shrink-0">
-                <service.icon className="w-8 h-8 text-amber-neon" />
-              </div>
-              
-              <h3 className="text-lg font-semibold mb-3 text-center">{service.title}</h3>
-              <p className="text-muted-foreground mb-6 text-sm leading-relaxed text-center flex-grow">
-                {service.description}
-              </p>
+                <div className="flex items-center justify-center w-16 h-16 bg-amber-neon/10 rounded-lg mb-6 group-hover:bg-amber-neon/20 transition-colors duration-300 flex-shrink-0">
+                  <service.icon className="w-8 h-8 text-amber-neon" />
+                </div>
+                
+                <h3 className="text-lg font-semibold mb-3 text-center text-black">{service.title}</h3>
+                <p className="text-gray-700 mb-6 text-sm leading-relaxed text-center flex-grow">
+                  {service.description}
+                </p>
 
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button variant="glow" className="w-full">
-                    Saiba Mais
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-md">
-                  <DialogHeader>
-                    <DialogTitle className="flex items-center gap-2">
-                      <service.icon className="w-5 h-5 text-amber-neon" />
-                      {service.title}
-                    </DialogTitle>
-                    <DialogDescription className="text-left">
-                      {service.details}
-                    </DialogDescription>
-                  </DialogHeader>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold mb-2">O que inclui:</h4>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 bg-amber-neon rounded-full"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="glow" className="w-full">
+                      Saiba Mais
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-md bg-white">
+                    <DialogHeader>
+                      <DialogTitle className="flex items-center gap-2 text-black">
+                        <service.icon className="w-5 h-5 text-amber-neon" />
+                        {service.title}
+                      </DialogTitle>
+                      <DialogDescription className="text-left text-gray-700">
+                        {service.details}
+                      </DialogDescription>
+                    </DialogHeader>
+                    
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="font-semibold mb-2 text-black">O que inclui:</h4>
+                        <ul className="space-y-1 text-sm text-gray-700">
+                          {service.features.map((feature, idx) => (
+                            <li key={idx} className="flex items-center gap-2">
+                              <div className="w-1.5 h-1.5 bg-amber-neon rounded-full"></div>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-                    <div className="flex gap-2 pt-4">
-                      {service.title === "PDF Store" ? (
-                        <Button
-                          variant="navy"
-                          size="sm"
-                          onClick={() => openTelegram(service.telegram)}
-                          className="w-full"
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Telegram
-                        </Button>
-                      ) : (
-                        <ServiceRequestModal 
-                          prefilledServiceType={service.title}
-                          trigger={
-                            <Button variant="glow" size="sm" className="w-full">
-                              <Wrench className="w-4 h-4 mr-2" />
-                              Solicitar Serviço
-                            </Button>
-                          }
-                        />
-                      )}
+                      <div className="flex gap-2 pt-4">
+                        {service.title === "PDF Store" ? (
+                          <Button
+                            variant="navy"
+                            size="sm"
+                            onClick={() => openTelegram(service.telegram)}
+                            className="w-full"
+                          >
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Telegram
+                          </Button>
+                        ) : (
+                          <ServiceRequestModal 
+                            prefilledServiceType={service.title}
+                            trigger={
+                              <Button variant="glow" size="sm" className="w-full">
+                                <Wrench className="w-4 h-4 mr-2" />
+                                Solicitar Serviço
+                              </Button>
+                            }
+                          />
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </DialogContent>
-              </Dialog>
-            </motion.div>
-          ))}
+                  </DialogContent>
+                </Dialog>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Gradient separator after section */}
+      <div className="h-24 bg-gradient-to-b from-white to-background"></div>
+    </>
   );
 });
 
