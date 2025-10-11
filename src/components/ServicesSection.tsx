@@ -160,12 +160,12 @@ const ServicesSection = memo(() => {
                 {service.description}
               </p>
 
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button variant="glow" className="w-full">
-                      Saiba Mais
-                    </Button>
-                  </DialogTrigger>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button className="w-full bg-amber-neon hover:bg-amber-neon/90 text-black font-semibold">
+                    Saiba Mais
+                  </Button>
+                </DialogTrigger>
                   <DialogContent className="sm:max-w-md bg-white">
                     <DialogHeader>
                       <DialogTitle className="flex items-center gap-2 text-black">
