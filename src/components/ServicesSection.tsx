@@ -136,20 +136,29 @@ const ServicesSection = memo(() => {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: Math.min(index * 0.05, 0.3), ease: "easeOut" }}
-              viewport={{ once: true, margin: "-50px" }}
-              className="bg-card p-6 rounded-lg border border-border hover:border-amber-neon/50 transition-all duration-200 group h-full flex flex-col gpu-accelerated"
+              transition={{ 
+                duration: 0.4, 
+                delay: Math.min(index * 0.03, 0.2), 
+                ease: "easeOut",
+                type: "tween"
+              }}
+              viewport={{ once: true, margin: "-30px" }}
+              className="bg-white border-2 border-gray-200 p-6 rounded-lg hover:border-amber-neon/50 transition-colors duration-300 group h-full flex flex-col shadow-sm"
+              style={{ 
+                willChange: 'transform, opacity',
+                transform: 'translateZ(0)'
+              }}
             >
-                <div className="flex items-center justify-center w-16 h-16 bg-amber-neon/10 rounded-lg mb-6 group-hover:bg-amber-neon/20 transition-colors duration-300 flex-shrink-0">
-                  <service.icon className="w-8 h-8 text-amber-neon" />
-                </div>
-                
-                <h3 className="text-lg font-semibold mb-3 text-center text-black">{service.title}</h3>
-                <p className="text-gray-700 mb-6 text-sm leading-relaxed text-center flex-grow">
-                  {service.description}
-                </p>
+              <div className="flex items-center justify-center w-16 h-16 bg-amber-neon/10 rounded-lg mb-6 group-hover:bg-amber-neon/20 transition-colors duration-300 flex-shrink-0">
+                <service.icon className="w-8 h-8 text-amber-neon" />
+              </div>
+              
+              <h3 className="text-lg font-semibold mb-3 text-center text-black">{service.title}</h3>
+              <p className="text-gray-700 mb-6 text-sm leading-relaxed text-center flex-grow">
+                {service.description}
+              </p>
 
                 <Dialog>
                   <DialogTrigger asChild>
