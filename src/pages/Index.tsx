@@ -6,7 +6,7 @@ import Hero from "@/components/Hero";
 const AboutSection = lazy(() => import("@/components/AboutSection"));
 const ServicesSection = lazy(() => import("@/components/ServicesSection"));
 const PortfolioShowcase = lazy(() => import("@/components/PortfolioShowcase"));
-const PDFStoreSection = lazy(() => import("@/components/PDFStoreSection"));
+const EventsSection = lazy(() => import("@/components/EventsSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
 
 
@@ -31,7 +31,7 @@ const Index = memo(() => {
         <PortfolioShowcase />
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
-        <PDFStoreSection />
+        <EventsSection />
       </Suspense>
       <Suspense fallback={<LoadingSpinner />}>
         <ContactSection />
