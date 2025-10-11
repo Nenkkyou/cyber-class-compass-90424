@@ -162,7 +162,7 @@ const ServicesSection = memo(() => {
 
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button className="w-full bg-amber-neon hover:bg-amber-neon/90 text-black font-semibold">
+                  <Button className="w-full bg-amber-neon hover:bg-amber-neon/90 text-black font-semibold transition-transform duration-200 hover:scale-105">
                     Saiba Mais
                   </Button>
                 </DialogTrigger>

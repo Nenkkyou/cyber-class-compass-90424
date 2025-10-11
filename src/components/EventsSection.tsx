@@ -124,7 +124,7 @@ const EventsSection = memo(() => {
           >
             <Button
               onClick={handleLearnMore}
-              className="text-lg px-8 py-6 bg-amber-neon hover:bg-amber-neon/90 text-black font-semibold"
+              className="text-lg px-8 py-6 bg-amber-neon hover:bg-amber-neon/90 text-black font-semibold transition-transform duration-200 hover:scale-105"
             >
               <ExternalLink className="w-5 h-5 mr-2" />
               Saiba Mais
