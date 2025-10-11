@@ -63,21 +63,6 @@ const EventsSection = memo(() => {
             </h2>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h3 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Aprenda Antes Deles
-            </h3>
-            <p className="text-xl text-gray-700 mb-2">
-              Aulão de 3 Horas sobre Inteligência Artificial
-            </p>
-          </motion.div>
-
           <div className="max-w-5xl mx-auto mb-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -138,10 +123,8 @@ const EventsSection = memo(() => {
             className="text-center"
           >
             <Button
-              variant="glow"
-              size="lg"
               onClick={handleLearnMore}
-              className="text-lg px-8 py-6"
+              className="text-lg px-8 py-6 bg-amber-neon hover:bg-amber-neon/90 text-black font-semibold"
             >
               <ExternalLink className="w-5 h-5 mr-2" />
               Saiba Mais
