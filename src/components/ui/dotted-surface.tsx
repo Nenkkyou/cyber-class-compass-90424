@@ -66,13 +66,10 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 				const y = 0; // Will be animated
 				const z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
 
-				positions.push(x, y, z);
-				if (theme === 'dark') {
-					colors.push(200, 200, 200);
-				} else {
-					colors.push(0, 0, 0);
-				}
-			}
+			positions.push(x, y, z);
+			// White color for both themes
+			colors.push(255, 255, 255);
+		}
 		}
 
 		geometry.setAttribute(
