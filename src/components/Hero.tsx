@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ShieldCheck, Brain, Zap } from "lucide-react";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { GalaxyBackground } from "@/components/ui/galaxy-background";
 
 const Hero = memo(() => {
   const scrollToSection = (sectionId: string) => {
@@ -12,7 +13,10 @@ const Hero = memo(() => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-cyber-gradient overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#0a1628] via-[#0c1e3d] to-[#0f2847]">
+      {/* Galaxy Background */}
+      <GalaxyBackground />
+      
       {/* Shooting Stars Background */}
       <ShootingStars
         starColor="#FFC107"
