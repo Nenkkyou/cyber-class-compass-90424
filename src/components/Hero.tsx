@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, Brain, Zap } from "lucide-react";
 import { ShootingStars } from "@/components/ui/shooting-stars";
-import { SparklesCore } from "@/components/ui/sparkles";
-import { GalaxyBackground } from "@/components/ui/galaxy-background";
 
 const Hero = memo(() => {
   const scrollToSection = (sectionId: string) => {
@@ -13,10 +11,7 @@ const Hero = memo(() => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#0a1628] via-[#0c1e3d] to-[#0f2847]">
-      {/* Galaxy Background */}
-      <GalaxyBackground />
-      
+    <section className="relative min-h-screen flex items-center justify-center bg-cyber-gradient overflow-hidden">
       {/* Shooting Stars Background */}
       <ShootingStars
         starColor="#FFC107"
@@ -48,39 +43,17 @@ const Hero = memo(() => {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="max-w-4xl mx-auto gpu-accelerated"
         >
-          {/* Logo/Brand with Sparkles */}
+          {/* Logo/Brand */}
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
-            className="mb-8 gpu-accelerated relative"
+            className="mb-8 gpu-accelerated"
           >
-            <h1 className="text-6xl md:text-8xl font-bold mb-4 relative z-20">
+            <h1 className="text-6xl md:text-8xl font-bold mb-4">
               <span className="text-amber-neon animate-glow">Cyber</span>
               <span className="text-foreground"> Class</span>
             </h1>
-            
-            {/* Sparkles Effect */}
-            <div className="w-full h-32 absolute -bottom-4 left-0">
-              {/* Gradients */}
-              <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-amber-neon to-transparent h-[2px] w-3/4 blur-sm" />
-              <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-amber-neon to-transparent h-px w-3/4" />
-              <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-amber-neon/70 to-transparent h-[5px] w-1/4 blur-sm" />
-              <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-amber-neon/70 to-transparent h-px w-1/4" />
-
-              {/* Sparkles Core */}
-              <SparklesCore
-                background="transparent"
-                minSize={0.4}
-                maxSize={1}
-                particleDensity={1200}
-                className="w-full h-full"
-                particleColor="#FFC107"
-              />
-
-              {/* Radial Gradient Mask */}
-              <div className="absolute inset-0 w-full h-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
-            </div>
           </motion.div>
 
           {/* Slogan */}
