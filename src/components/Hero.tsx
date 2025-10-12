@@ -2,7 +2,7 @@ import { memo } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, Brain, Zap } from "lucide-react";
-import { DottedSurface } from "@/components/ui/dotted-surface";
+import { ShootingStars } from "@/components/ui/shooting-stars";
 
 const Hero = memo(() => {
   const scrollToSection = (sectionId: string) => {
@@ -12,8 +12,23 @@ const Hero = memo(() => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-cyber-gradient overflow-hidden">
-      {/* Dotted Surface Background */}
-      <DottedSurface />
+      {/* Shooting Stars Background */}
+      <ShootingStars
+        starColor="#FFC107"
+        trailColor="#FF6B35"
+        minSpeed={15}
+        maxSpeed={35}
+        minDelay={1000}
+        maxDelay={3000}
+      />
+      <ShootingStars
+        starColor="#00BCD4"
+        trailColor="#9C27B0"
+        minSpeed={10}
+        maxSpeed={25}
+        minDelay={2000}
+        maxDelay={4000}
+      />
       
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10">

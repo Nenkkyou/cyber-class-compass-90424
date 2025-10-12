@@ -19,7 +19,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         cyber: "bg-amber-gradient text-accent-foreground font-semibold hover:scale-105 shadow-lg hover:shadow-amber-neon/25 transition-transform duration-150",
-        glow: "bg-transparent border-2 border-amber-neon text-amber-neon hover:bg-amber-neon hover:text-black hover-glow-fast transition-colors duration-150",
+        glow: "bg-amber-neon text-black font-semibold hover:scale-105 shadow-lg hover:shadow-amber-neon/50 transition-all duration-150",
         navy: "bg-navy text-foreground hover:bg-navy/80",
       },
       size: {
