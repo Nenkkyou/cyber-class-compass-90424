@@ -2,6 +2,7 @@ import { memo } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, Brain, Zap } from "lucide-react";
+import { DottedSurface } from "@/components/ui/dotted-surface";
 
 const Hero = memo(() => {
   const scrollToSection = (sectionId: string) => {
@@ -11,6 +12,9 @@ const Hero = memo(() => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-cyber-gradient overflow-hidden">
+      {/* Dotted Surface Background */}
+      <DottedSurface />
+      
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-amber-neon rounded-full blur-3xl animate-pulse"></div>
