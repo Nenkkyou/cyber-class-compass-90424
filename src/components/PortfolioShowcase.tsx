@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, Star, ExternalLink } from "lucide-react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { autoplayPlugin } from "@/lib/keenAutoplay";
-import { fadeUp, standardViewport } from "@/lib/motion";
+import { fadeUp, headingViewport, sectionViewport } from "@/lib/motion";
 
 const PortfolioShowcase = memo(() => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -194,13 +194,13 @@ const PortfolioShowcase = memo(() => {
   return (
     <section id="portfolio" className="py-20 bg-muted/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <m.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={standardViewport}
-          className="text-center mb-16 gpu-accelerated"
-        >
+      <m.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={headingViewport}
+        className="text-center mb-16 gpu-accelerated"
+      >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Nosso <span className="text-amber-neon">Portfólio</span>
           </h2>

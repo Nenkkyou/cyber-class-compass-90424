@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { m } from "framer-motion";
 import { ShieldCheck, Brain, Laptop, Users, Heart, Target } from "lucide-react";
-import { fadeUp, containerStagger, item, standardViewport } from "@/lib/motion";
+import { fadeUp, containerStagger, item, headingViewport, cardGridViewport } from "@/lib/motion";
 
 const AboutSection = memo(() => {
   const features = [
@@ -47,7 +47,7 @@ const AboutSection = memo(() => {
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
-          viewport={standardViewport}
+          viewport={headingViewport}
           className="text-center mb-16 gpu-accelerated"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
@@ -64,7 +64,7 @@ const AboutSection = memo(() => {
           variants={containerStagger}
           initial="hidden"
           whileInView="show"
-          viewport={standardViewport}
+          viewport={cardGridViewport}
           className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-16 sm:mb-20"
         >
           {features.map((feature) => (
@@ -87,7 +87,7 @@ const AboutSection = memo(() => {
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
-          viewport={standardViewport}
+          viewport={headingViewport}
           className="text-center mb-8 sm:mb-12 gpu-accelerated"
         >
           <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 px-2">Nossos Valores</h3>
@@ -101,7 +101,7 @@ const AboutSection = memo(() => {
           variants={containerStagger}
           initial="hidden"
           whileInView="show"
-          viewport={standardViewport}
+          viewport={cardGridViewport}
           className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"
         >
           {values.map((value) => (

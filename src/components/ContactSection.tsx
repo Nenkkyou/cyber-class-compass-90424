@@ -1,7 +1,7 @@
 import { useState, memo, useCallback } from "react";
 import { m } from "framer-motion";
 import { useForm } from "react-hook-form";
-import { fadeUp, standardViewport } from "@/lib/motion";
+import { fadeUp, containerStagger, item, headingViewport, cardGridViewport } from "@/lib/motion";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
@@ -98,7 +98,7 @@ const ContactSection = memo(() => {
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
-          viewport={standardViewport}
+          viewport={headingViewport}
           className="text-center mb-16 gpu-accelerated"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
@@ -112,14 +112,14 @@ const ContactSection = memo(() => {
         <div className="max-w-4xl mx-auto">
           {/* Contact Info */}
           <m.div
-            variants={fadeUp}
+            variants={containerStagger}
             initial="hidden"
             whileInView="show"
-            viewport={standardViewport}
+            viewport={cardGridViewport}
             className="grid sm:grid-cols-2 gap-4 sm:gap-6 gpu-accelerated"
           >
             {/* Quick Contact Methods */}
-            <div className="bg-card p-4 sm:p-6 rounded-lg border border-border">
+            <m.div variants={item} className="bg-card p-4 sm:p-6 rounded-lg border border-border">
               <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Contato Direto</h3>
               <div className="space-y-3 sm:space-y-4">
                 <Button
@@ -142,10 +142,10 @@ const ContactSection = memo(() => {
                   <span className="truncate">Email</span>
                 </Button>
               </div>
-            </div>
+            </m.div>
 
             {/* Social Media */}
-            <div className="bg-card p-4 sm:p-6 rounded-lg border border-border">
+            <m.div variants={item} className="bg-card p-4 sm:p-6 rounded-lg border border-border">
               <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Redes Sociais</h3>
               <div className="space-y-3 sm:space-y-4">
                 <div className="grid grid-cols-2 gap-2 sm:gap-4">
@@ -168,10 +168,10 @@ const ContactSection = memo(() => {
                 </div>
                  <ServiceRequestModal />
               </div>
-            </div>
+            </m.div>
 
             {/* Business Hours */}
-            <div className="bg-card p-4 sm:p-6 rounded-lg border border-border">
+            <m.div variants={item} className="bg-card p-4 sm:p-6 rounded-lg border border-border">
               <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 flex items-center">
                 <Clock className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-amber-neon flex-shrink-0" />
                 <span>Horário de Atendimento</span>
@@ -190,10 +190,10 @@ const ContactSection = memo(() => {
                   <span>Emergências apenas</span>
                 </div>
               </div>
-            </div>
+            </m.div>
 
             {/* Service Areas */}
-            <div className="bg-card p-4 sm:p-6 rounded-lg border border-border">
+            <m.div variants={item} className="bg-card p-4 sm:p-6 rounded-lg border border-border">
               <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 flex items-center">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-amber-neon flex-shrink-0" />
                 <span>Atendimento Presencial</span>
@@ -204,7 +204,7 @@ const ContactSection = memo(() => {
                 <p>📍 Interior de SP (consulte)</p>
                 <p>🌐 Remoto em todo Brasil</p>
               </div>
-            </div>
+            </m.div>
           </m.div>
         </div>
       </div>

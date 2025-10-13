@@ -23,7 +23,7 @@ import {
   Users
 } from "lucide-react";
 import ServiceRequestModal from "./ServiceRequestModal";
-import { fadeUp, containerStagger, item, standardViewport } from "@/lib/motion";
+import { fadeUp, containerStagger, item, headingViewport, cardGridViewport } from "@/lib/motion";
 
 const ServicesSection = memo(() => {
 
@@ -118,13 +118,13 @@ const ServicesSection = memo(() => {
       
       <section id="servicos" className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <m.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={standardViewport}
-            className="text-center mb-16 gpu-accelerated"
-          >
+      <m.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={headingViewport}
+        className="text-center mb-16 gpu-accelerated"
+      >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-2">
               <span className="text-black">Nossos </span><span className="text-amber-neon">Serviços</span>
             </h2>
@@ -137,7 +137,7 @@ const ServicesSection = memo(() => {
           variants={containerStagger}
           initial="hidden"
           whileInView="show"
-          viewport={standardViewport}
+          viewport={cardGridViewport}
           className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto"
         >
           {services.map((service) => (

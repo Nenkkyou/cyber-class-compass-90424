@@ -50,20 +50,41 @@ export const item: Variants = {
 };
 
 /**
- * Standardized viewport configuration
- * Compensates for fixed navbar (-64px) and triggers before bottom fold (-20%)
- */
-export const standardViewport = {
-  once: true,
-  amount: 0.2 as const,
-  margin: "-64px 0px -20% 0px"
-};
-
-/**
- * Lighter viewport for hero/above-fold content
+ * Viewport for hero/above-fold content
+ * Triggers immediately when any part enters viewport
  */
 export const heroViewport = {
   once: true,
+  amount: 0.05 as const,
+  margin: "0px 0px 0px 0px"
+};
+
+/**
+ * Viewport for section headings and single elements
+ * Mobile-optimized: triggers when 10% visible, compensates navbar
+ */
+export const headingViewport = {
+  once: true,
   amount: 0.1 as const,
-  margin: "0px"
+  margin: "-80px 0px -100px 0px"
+};
+
+/**
+ * Viewport for card grids and stagger containers
+ * Mobile-optimized: lower threshold, triggers earlier for smoother stagger
+ */
+export const cardGridViewport = {
+  once: true,
+  amount: 0.08 as const,
+  margin: "-80px 0px -150px 0px"
+};
+
+/**
+ * Viewport for large content sections
+ * More forgiving threshold for tall sections on mobile
+ */
+export const sectionViewport = {
+  once: true,
+  amount: 0.12 as const,
+  margin: "-80px 0px -120px 0px"
 };

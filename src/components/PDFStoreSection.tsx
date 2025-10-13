@@ -3,7 +3,7 @@ import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import StarRating from "@/components/ui/star-rating";
-import { fadeUp, containerStagger, item, standardViewport } from "@/lib/motion";
+import { fadeUp, containerStagger, item, headingViewport, cardGridViewport, sectionViewport } from "@/lib/motion";
 import { 
   FileText, 
   Brain, 
@@ -86,13 +86,13 @@ const PDFStoreSection = memo(() => {
   return (
     <section id="pdfs" className="py-20 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <m.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={standardViewport}
-          className="text-center mb-16 gpu-accelerated"
-        >
+      <m.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={headingViewport}
+        className="text-center mb-16 gpu-accelerated"
+      >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             PDF <span className="text-amber-neon">STORE</span>
           </h2>
@@ -105,7 +105,7 @@ const PDFStoreSection = memo(() => {
           variants={containerStagger}
           initial="hidden"
           whileInView="show"
-          viewport={standardViewport}
+          viewport={cardGridViewport}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {pdfs.map((pdf) => (
@@ -192,13 +192,13 @@ const PDFStoreSection = memo(() => {
           ))}
         </m.div>
 
-        <m.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={standardViewport}
-          className="text-center mt-12 p-6 bg-card rounded-lg border border-border gpu-accelerated"
-        >
+      <m.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={sectionViewport}
+        className="text-center mt-12 p-6 bg-card rounded-lg border border-border gpu-accelerated"
+      >
           <h3 className="text-lg font-semibold mb-2">Todos os PDFs incluem:</h3>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">

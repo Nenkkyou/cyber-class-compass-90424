@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ShieldCheck, Brain, Zap } from "lucide-react";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { DottedSurface } from "@/components/ui/dotted-surface";
+import { heroViewport } from "@/lib/motion";
 
 const Hero = memo(() => {
   const scrollToSection = (sectionId: string) => {

@@ -2,7 +2,7 @@ import { memo } from "react";
 import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Brain, Target, Lightbulb, Rocket } from "lucide-react";
-import { fadeUp, containerStagger, item as itemVariant, standardViewport } from "@/lib/motion";
+import { fadeUp, containerStagger, item as itemVariant, headingViewport, cardGridViewport, sectionViewport } from "@/lib/motion";
 
 const EventsSection = memo(() => {
   const agenda = [
@@ -51,13 +51,13 @@ const EventsSection = memo(() => {
       
       <section id="eventos" className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <m.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={standardViewport}
-            className="text-center mb-16 gpu-accelerated"
-          >
+        <m.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={headingViewport}
+          className="text-center mb-16 gpu-accelerated"
+        >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-black">Eventos </span>
               <span className="text-amber-neon">CyberClass</span>
@@ -65,13 +65,13 @@ const EventsSection = memo(() => {
           </m.div>
 
           <div className="max-w-5xl mx-auto mb-12">
-            <m.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={standardViewport}
-              className="text-center mb-12 gpu-accelerated"
-            >
+        <m.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={headingViewport}
+          className="text-center mb-12 gpu-accelerated"
+        >
               <h4 className="text-2xl md:text-3xl font-bold text-black mb-4">
                 Agenda do Aulão
               </h4>
@@ -84,7 +84,7 @@ const EventsSection = memo(() => {
               variants={containerStagger}
               initial="hidden"
               whileInView="show"
-              viewport={standardViewport}
+              viewport={cardGridViewport}
               className="grid grid-cols-1 md:grid-cols-2 gap-6"
             >
               {agenda.map((item) => (
@@ -119,13 +119,13 @@ const EventsSection = memo(() => {
             </m.div>
           </div>
 
-          <m.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={standardViewport}
-            className="text-center gpu-accelerated"
-          >
+        <m.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={sectionViewport}
+          className="text-center gpu-accelerated"
+        >
             <Button
               onClick={handleLearnMore}
               className="text-lg px-8 py-6 bg-amber-neon hover:bg-amber-neon/90 text-black font-semibold transition-transform duration-200 hover:scale-105"
