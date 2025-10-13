@@ -1,18 +1,12 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { useTheme } from 'next-themes';
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 type DottedSurfaceProps = Omit<React.ComponentProps<'div'>, 'ref'>;
 
 export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
-
-	const { theme } = useTheme();
-
-
 	const containerRef = useRef<HTMLDivElement>(null);
-
 	const sceneRef = useRef<{
 		scene: THREE.Scene;
 		camera: THREE.PerspectiveCamera;
@@ -21,7 +15,6 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 		animationId: number;
 		count: number;
 	} | null>(null);
-
 
 	useEffect(() => {
 		if (!containerRef.current) return;
@@ -32,7 +25,7 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 
 		// Scene setup
 		const scene = new THREE.Scene();
-		scene.fog = new THREE.Fog(0xffffff, 2000, 10000);
+		scene.fog = new THREE.Fog(0x000000, 2000, 10000);
 
 		const camera = new THREE.PerspectiveCamera(
 			60,
@@ -60,16 +53,20 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 		// Create geometry for all particles
 		const geometry = new THREE.BufferGeometry();
 
+		// Amber neon color (hsl(45 100% 50%)) = RGB approximately (255, 204, 0)
+		const amberR = 255;
+		const amberG = 204;
+		const amberB = 0;
+
 		for (let ix = 0; ix < AMOUNTX; ix++) {
 			for (let iy = 0; iy < AMOUNTY; iy++) {
 				const x = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2;
 				const y = 0; // Will be animated
 				const z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
 
-			positions.push(x, y, z);
-			// White color for both themes
-			colors.push(255, 255, 255);
-		}
+				positions.push(x, y, z);
+				colors.push(amberR, amberG, amberB);
+			}
 		}
 
 		geometry.setAttribute(
@@ -116,15 +113,6 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 			}
 
 			positionAttribute.needsUpdate = true;
-
-			// Update point sizes based on wave
-			const customMaterial = material as THREE.PointsMaterial & {
-				uniforms?: any;
-			};
-			if (!customMaterial.uniforms) {
-				// For dynamic size changes, we'd need a custom shader
-				// For now, keeping constant size for performance
-			}
 
 			renderer.render(scene, camera);
 			count += 0.1;
@@ -180,14 +168,13 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 				}
 			}
 		};
-	}, [theme]);
+	}, []);
 
 	return (
 		<div
 			ref={containerRef}
-			className={cn('pointer-events-none fixed inset-0 -z-1', className)}
+			className={cn('pointer-events-none absolute inset-0 -z-1', className)}
 			{...props}
 		/>
 	);
 }
-
