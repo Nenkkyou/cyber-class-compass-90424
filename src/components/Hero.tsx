@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, Brain, Zap } from "lucide-react";
 import { ShootingStars } from "@/components/ui/shooting-stars";
@@ -41,14 +41,14 @@ const Hero = memo(() => {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="max-w-4xl mx-auto gpu-accelerated"
         >
           {/* Logo/Brand */}
-          <motion.div
+          <m.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
@@ -58,20 +58,20 @@ const Hero = memo(() => {
               <span className="text-amber-neon animate-glow">Cyber</span>
               <span className="text-foreground"> Class</span>
             </h1>
-          </motion.div>
+          </m.div>
 
           {/* Slogan */}
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
             className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 sm:mb-12 leading-relaxed px-4 gpu-accelerated"
           >
             O elo entre o futuro digital e quem precisa de um guia humano para chegar lá
-          </motion.p>
+          </m.p>
 
           {/* Feature highlights */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
@@ -89,10 +89,10 @@ const Hero = memo(() => {
               <Zap className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
               <span>Suporte Técnico</span>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* CTA Button */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
@@ -106,8 +106,8 @@ const Hero = memo(() => {
             >
               Conheça a Cyber Class
             </Button>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
 
       </div>
     </section>

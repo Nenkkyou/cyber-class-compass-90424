@@ -1,5 +1,5 @@
 import { useState, memo, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -21,7 +21,7 @@ const Navbar = memo(() => {
   }, []);
 
   return (
-    <motion.nav
+    <m.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -30,7 +30,7 @@ const Navbar = memo(() => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div
+          <m.div
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-2"
           >
@@ -43,7 +43,7 @@ const Navbar = memo(() => {
               <span className="text-amber-neon">Cyber</span>
               <span className="text-foreground">Class</span>
             </span>
-          </motion.div>
+          </m.div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
@@ -74,7 +74,7 @@ const Navbar = memo(() => {
         {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -92,11 +92,11 @@ const Navbar = memo(() => {
                   </button>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>
-    </motion.nav>
+    </m.nav>
   );
 });
 

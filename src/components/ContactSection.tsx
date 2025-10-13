@@ -1,6 +1,7 @@
 import { useState, memo, useCallback } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useForm } from "react-hook-form";
+import { fadeUp, standardViewport } from "@/lib/motion";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
@@ -93,12 +94,12 @@ const ContactSection = memo(() => {
   return (
     <section id="contato" className="py-20 bg-muted/30 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+        <m.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={standardViewport}
+          className="text-center mb-16 gpu-accelerated"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             Entre em <span className="text-amber-neon">Contato</span>
@@ -106,16 +107,16 @@ const ContactSection = memo(() => {
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             Estamos prontos para ajudar você a dar o próximo passo no mundo digital
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="max-w-4xl mx-auto">
           {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="grid sm:grid-cols-2 gap-4 sm:gap-6"
+          <m.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={standardViewport}
+            className="grid sm:grid-cols-2 gap-4 sm:gap-6 gpu-accelerated"
           >
             {/* Quick Contact Methods */}
             <div className="bg-card p-4 sm:p-6 rounded-lg border border-border">
@@ -204,7 +205,7 @@ const ContactSection = memo(() => {
                 <p>🌐 Remoto em todo Brasil</p>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
 
