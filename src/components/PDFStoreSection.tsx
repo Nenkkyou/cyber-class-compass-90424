@@ -86,11 +86,11 @@ const PDFStoreSection = memo(() => {
     <section id="pdfs" className="py-20 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          viewport={{ once: true, margin: "0px" }}
+          className="text-center mb-16 gpu-accelerated"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             PDF <span className="text-amber-neon">STORE</span>
@@ -104,11 +104,11 @@ const PDFStoreSection = memo(() => {
           {pdfs.map((pdf, index) => (
             <motion.div
               key={pdf.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-card p-6 rounded-lg border border-border hover:border-amber-neon/50 transition-all duration-300 group h-full flex flex-col"
+              transition={{ duration: 0.25, delay: Math.min(index * 0.05, 0.15), ease: "easeOut" }}
+              viewport={{ once: true, margin: "0px" }}
+              className="bg-card p-6 rounded-lg border border-border hover:border-amber-neon/50 transition-all duration-300 group h-full flex flex-col gpu-accelerated"
             >
               {/* Header with badges */}
               <div className="flex flex-wrap gap-2 mb-4">
@@ -189,11 +189,11 @@ const PDFStoreSection = memo(() => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-12 p-6 bg-card rounded-lg border border-border"
+          transition={{ duration: 0.3, delay: 0.15 }}
+          viewport={{ once: true, margin: "0px" }}
+          className="text-center mt-12 p-6 bg-card rounded-lg border border-border gpu-accelerated"
         >
           <h3 className="text-lg font-semibold mb-2">Todos os PDFs incluem:</h3>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">

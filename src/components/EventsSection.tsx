@@ -51,11 +51,11 @@ const EventsSection = memo(() => {
       <section id="eventos" className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="text-center mb-16"
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            viewport={{ once: true, margin: "0px" }}
+            className="text-center mb-16 gpu-accelerated"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-black">Eventos </span>
@@ -65,11 +65,11 @@ const EventsSection = memo(() => {
 
           <div className="max-w-5xl mx-auto mb-12">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
+              transition={{ duration: 0.3, delay: 0.1 }}
+              viewport={{ once: true, margin: "0px" }}
+              className="text-center mb-12 gpu-accelerated"
             >
               <h4 className="text-2xl md:text-3xl font-bold text-black mb-4">
                 Agenda do Aulão
@@ -83,11 +83,11 @@ const EventsSection = memo(() => {
               {agenda.map((item, index) => (
                 <motion.div
                   key={item.number}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.1 * index }}
-                  viewport={{ once: true }}
-                  className="relative bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-amber-neon/50 transition-all duration-300 hover:shadow-lg"
+                  transition={{ duration: 0.25, delay: Math.min(index * 0.05, 0.15), ease: "easeOut" }}
+                  viewport={{ once: true, margin: "0px" }}
+                  className="relative bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-amber-neon/50 transition-all duration-300 hover:shadow-lg gpu-accelerated"
                 >
                   <div className="absolute -top-4 -right-4 w-12 h-12 bg-amber-neon rounded-full flex items-center justify-center text-black font-bold text-lg shadow-lg">
                     {item.number}
@@ -116,11 +116,11 @@ const EventsSection = memo(() => {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center"
+            transition={{ duration: 0.3, delay: 0.2 }}
+            viewport={{ once: true, margin: "0px" }}
+            className="text-center gpu-accelerated"
           >
             <Button
               onClick={handleLearnMore}
