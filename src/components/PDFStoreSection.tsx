@@ -1,8 +1,9 @@
 import { memo, useCallback } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import StarRating from "@/components/ui/star-rating";
+import { fadeUp, containerStagger, item, standardViewport } from "@/lib/motion";
 import { 
   FileText, 
   Brain, 
@@ -85,11 +86,11 @@ const PDFStoreSection = memo(() => {
   return (
     <section id="pdfs" className="py-20 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          viewport={{ once: true, margin: "0px" }}
+        <m.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={standardViewport}
           className="text-center mb-16 gpu-accelerated"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -98,16 +99,19 @@ const PDFStoreSection = memo(() => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Materiais didáticos validados por humanos e IA, desenvolvidos para aprendizado prático e acessível para todos
           </p>
-        </motion.div>
+        </m.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {pdfs.map((pdf, index) => (
-            <motion.div
+        <m.div 
+          variants={containerStagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={standardViewport}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {pdfs.map((pdf) => (
+            <m.div
               key={pdf.title}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.25, delay: Math.min(index * 0.05, 0.15), ease: "easeOut" }}
-              viewport={{ once: true, margin: "0px" }}
+              variants={item}
               className="bg-card p-6 rounded-lg border border-border hover:border-amber-neon/50 transition-all duration-300 group h-full flex flex-col gpu-accelerated"
             >
               {/* Header with badges */}
@@ -184,15 +188,15 @@ const PDFStoreSection = memo(() => {
                   Comprar via Telegram
                 </Button>
               </div>
-            </motion.div>
+            </m.div>
           ))}
-        </div>
+        </m.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.15 }}
-          viewport={{ once: true, margin: "0px" }}
+        <m.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={standardViewport}
           className="text-center mt-12 p-6 bg-card rounded-lg border border-border gpu-accelerated"
         >
           <h3 className="text-lg font-semibold mb-2">Todos os PDFs incluem:</h3>
@@ -214,7 +218,7 @@ const PDFStoreSection = memo(() => {
               <span>Exemplos práticos</span>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

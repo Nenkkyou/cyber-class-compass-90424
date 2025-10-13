@@ -1,5 +1,5 @@
-import { useState, memo, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { memo, useCallback } from "react";
+import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -23,6 +23,7 @@ import {
   Users
 } from "lucide-react";
 import ServiceRequestModal from "./ServiceRequestModal";
+import { fadeUp, containerStagger, item, standardViewport } from "@/lib/motion";
 
 const ServicesSection = memo(() => {
 
@@ -117,11 +118,11 @@ const ServicesSection = memo(() => {
       
       <section id="servicos" className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-50px" }}
+          <m.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={standardViewport}
             className="text-center mb-16 gpu-accelerated"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-2">
@@ -130,26 +131,20 @@ const ServicesSection = memo(() => {
             <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto px-4">
             Soluções completas para suas necessidades digitais, desde aprendizado até suporte técnico
           </p>
-        </motion.div>
+        </m.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {services.map((service, index) => (
-            <motion.div
+        <m.div 
+          variants={containerStagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={standardViewport}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto"
+        >
+          {services.map((service) => (
+            <m.div
               key={service.title}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.4, 
-                delay: Math.min(index * 0.03, 0.2), 
-                ease: "easeOut",
-                type: "tween"
-              }}
-              viewport={{ once: true, margin: "-30px" }}
-              className="bg-white border-2 border-gray-200 p-6 rounded-lg hover:border-amber-neon/50 transition-colors duration-300 group h-full flex flex-col shadow-sm"
-              style={{ 
-                willChange: 'transform, opacity',
-                transform: 'translateZ(0)'
-              }}
+              variants={item}
+              className="bg-white border-2 border-gray-200 p-6 rounded-lg hover:border-amber-neon/50 transition-colors duration-300 group h-full flex flex-col shadow-sm gpu-accelerated"
             >
               <div className="flex items-center justify-center w-16 h-16 bg-amber-neon/10 rounded-lg mb-6 group-hover:bg-amber-neon/20 transition-colors duration-300 flex-shrink-0">
                 <service.icon className="w-8 h-8 text-amber-neon" />
@@ -216,9 +211,9 @@ const ServicesSection = memo(() => {
                     </div>
                   </DialogContent>
                 </Dialog>
-              </motion.div>
+              </m.div>
             ))}
-          </div>
+          </m.div>
         </div>
       </section>
 

@@ -34,8 +34,8 @@ const Hero = memo(() => {
         maxDelay={4000}
       />
       
-      {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Animated background elements - hidden on mobile for performance */}
+      <div className="absolute inset-0 opacity-10 hidden sm:block">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-amber-neon rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-navy rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>

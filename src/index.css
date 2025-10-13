@@ -195,4 +195,10 @@ All colors MUST be HSL.
     backface-visibility: hidden;
     will-change: transform, opacity;
   }
+
+  /* Content visibility for off-screen optimization */
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px;
+  }
 }

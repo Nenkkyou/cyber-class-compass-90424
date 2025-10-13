@@ -1,11 +1,12 @@
-import { useState, memo, useCallback } from "react";
-import { motion } from "framer-motion";
+import { useState, memo } from "react";
+import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import StarRating from "@/components/ui/star-rating";
 import { ChevronLeft, ChevronRight, Star, ExternalLink } from "lucide-react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { autoplayPlugin } from "@/lib/keenAutoplay";
+import { fadeUp, standardViewport } from "@/lib/motion";
 
 const PortfolioShowcase = memo(() => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -193,11 +194,11 @@ const PortfolioShowcase = memo(() => {
   return (
     <section id="portfolio" className="py-20 bg-muted/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-50px" }}
+        <m.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={standardViewport}
           className="text-center mb-16 gpu-accelerated"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -206,20 +207,13 @@ const PortfolioShowcase = memo(() => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Resultados reais de clientes reais. Veja o impacto dos nossos serviços na vida das pessoas.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="relative px-4 sm:px-8">
           <div ref={sliderRef} className="keen-slider overflow-hidden">
             {portfolioItems.map((item, index) => (
-              <div key={index} className="keen-slider__slide flex min-h-0">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.25, delay: Math.min(index * 0.03, 0.3), ease: "easeOut" }}
-                  className="w-full gpu-accelerated"
-                >
-                  {renderCard(item, index)}
-                </motion.div>
+              <div key={index} className="keen-slider__slide flex min-h-0 gpu-accelerated">
+                {renderCard(item, index)}
               </div>
             ))}
           </div>
