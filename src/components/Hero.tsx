@@ -52,9 +52,9 @@ const Hero = memo(() => {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
-            className="mb-8 gpu-accelerated"
+            className="mb-6 sm:mb-8 gpu-accelerated"
           >
-            <h1 className="text-6xl md:text-8xl font-bold mb-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-3 sm:mb-4 px-2">
               <span className="text-amber-neon animate-glow">Cyber</span>
               <span className="text-foreground"> Class</span>
             </h1>
@@ -65,7 +65,7 @@ const Hero = memo(() => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
-            className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed gpu-accelerated"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 sm:mb-12 leading-relaxed px-4 gpu-accelerated"
           >
             O elo entre o futuro digital e quem precisa de um guia humano para chegar lá
           </motion.p>
@@ -75,18 +75,18 @@ const Hero = memo(() => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
-            className="flex flex-wrap justify-center gap-6 mb-12 gpu-accelerated"
+            className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12 px-4 gpu-accelerated"
           >
-            <div className="flex items-center gap-2 text-amber-neon">
-              <Brain className="w-5 h-5" />
+            <div className="flex items-center gap-1.5 sm:gap-2 text-amber-neon text-sm sm:text-base">
+              <Brain className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
               <span>IA Acessível</span>
             </div>
-            <div className="flex items-center gap-2 text-amber-neon">
-              <ShieldCheck className="w-5 h-5" />
+            <div className="flex items-center gap-1.5 sm:gap-2 text-amber-neon text-sm sm:text-base">
+              <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
               <span>Cibersegurança</span>
             </div>
-            <div className="flex items-center gap-2 text-amber-neon">
-              <Zap className="w-5 h-5" />
+            <div className="flex items-center gap-1.5 sm:gap-2 text-amber-neon text-sm sm:text-base">
+              <Zap className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
               <span>Suporte Técnico</span>
             </div>
           </motion.div>
@@ -96,13 +96,13 @@ const Hero = memo(() => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
-            className="gpu-accelerated"
+            className="gpu-accelerated px-4"
           >
             <Button
               variant="cyber"
               size="lg"
               onClick={() => scrollToSection('sobre')}
-              className="text-lg px-8 py-6 h-auto"
+              className="text-sm sm:text-base md:text-lg px-6 sm:px-8 py-4 sm:py-6 h-auto"
             >
               Conheça a Cyber Class
             </Button>

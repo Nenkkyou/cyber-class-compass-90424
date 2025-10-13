@@ -49,10 +49,10 @@ const AboutSection = memo(() => {
           viewport={{ once: true, margin: "-50px" }}
           className="text-center mb-16 gpu-accelerated"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             Sobre a <span className="text-amber-neon">Cyber Class</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-2">
             Atuamos com a energia de quem está começando e o olhar atento de quem conhece a realidade das pessoas. 
             Nosso propósito é ser a ponte entre o universo digital e quem ainda precisa de apoio humano para atravessá-lo.
           </p>
@@ -64,7 +64,7 @@ const AboutSection = memo(() => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
           viewport={{ once: true, margin: "-50px" }}
-          className="grid md:grid-cols-3 gap-8 mb-20 gpu-accelerated"
+          className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-16 sm:mb-20 gpu-accelerated"
         >
           {features.map((feature, index) => (
             <motion.div
@@ -73,13 +73,13 @@ const AboutSection = memo(() => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.05, ease: "easeOut" }}
               viewport={{ once: true, margin: "-50px" }}
-              className="bg-card p-8 rounded-lg border border-border hover:border-amber-neon/50 transition-all duration-200 group gpu-accelerated"
+              className="bg-card p-5 sm:p-6 md:p-8 rounded-lg border border-border hover:border-amber-neon/50 transition-all duration-200 group gpu-accelerated"
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-amber-neon/10 rounded-lg mb-6 mx-auto group-hover:bg-amber-neon/20 transition-colors duration-300">
-                <feature.icon className="w-8 h-8 text-amber-neon" />
+              <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-amber-neon/10 rounded-lg mb-4 sm:mb-6 mx-auto group-hover:bg-amber-neon/20 transition-colors duration-300">
+                <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-amber-neon" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-center">{feature.title}</h3>
-              <p className="text-muted-foreground text-center leading-relaxed">{feature.description}</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">{feature.title}</h3>
+              <p className="text-sm sm:text-base text-muted-foreground text-center leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -90,10 +90,10 @@ const AboutSection = memo(() => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h3 className="text-3xl font-bold mb-6">Nossos Valores</h3>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 px-2">Nossos Valores</h3>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Cada projeto que realizamos é guiado por nossos valores fundamentais, 
             sempre colocando as pessoas em primeiro lugar.
           </p>
@@ -104,7 +104,7 @@ const AboutSection = memo(() => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"
         >
           {values.map((value, index) => (
             <motion.div
@@ -113,13 +113,13 @@ const AboutSection = memo(() => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="text-center group"
+              className="text-center group px-2"
             >
-              <div className="flex items-center justify-center w-12 h-12 bg-amber-neon/10 rounded-full mb-4 mx-auto group-hover:bg-amber-neon/20 transition-colors duration-300">
-                <value.icon className="w-6 h-6 text-amber-neon" />
+              <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-amber-neon/10 rounded-full mb-3 sm:mb-4 mx-auto group-hover:bg-amber-neon/20 transition-colors duration-300">
+                <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-amber-neon" />
               </div>
-              <h4 className="text-lg font-semibold mb-3">{value.title}</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
+              <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">{value.title}</h4>
+              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{value.description}</p>
             </motion.div>
           ))}
         </motion.div>

@@ -124,10 +124,10 @@ const ServicesSection = memo(() => {
             viewport={{ once: true, margin: "-50px" }}
             className="text-center mb-16 gpu-accelerated"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-2">
               <span className="text-black">Nossos </span><span className="text-amber-neon">Serviços</span>
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto px-4">
             Soluções completas para suas necessidades digitais, desde aprendizado até suporte técnico
           </p>
         </motion.div>

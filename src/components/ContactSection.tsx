@@ -100,10 +100,10 @@ const ContactSection = memo(() => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             Entre em <span className="text-amber-neon">Contato</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             Estamos prontos para ajudar você a dar o próximo passo no mundo digital
           </p>
         </motion.div>
@@ -115,54 +115,54 @@ const ContactSection = memo(() => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-6"
+            className="grid sm:grid-cols-2 gap-4 sm:gap-6"
           >
             {/* Quick Contact Methods */}
-            <div className="bg-card p-6 rounded-lg border border-border">
-              <h3 className="text-xl font-semibold mb-4">Contato Direto</h3>
-              <div className="space-y-4">
+            <div className="bg-card p-4 sm:p-6 rounded-lg border border-border">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Contato Direto</h3>
+              <div className="space-y-3 sm:space-y-4">
                 <Button
                   variant="glow"
                   size="lg"
                   onClick={openWhatsApp}
-                  className="w-full justify-start"
+                  className="w-full justify-start text-sm sm:text-base h-auto py-3"
                 >
-                  <MessageCircle className="w-5 h-5 mr-3" />
-                  WhatsApp
+                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" />
+                  <span className="truncate">WhatsApp</span>
                 </Button>
                 
                 <Button
                   variant="outline"
                   size="lg"
                   onClick={openEmail}
-                  className="w-full justify-start"
+                  className="w-full justify-start text-sm sm:text-base h-auto py-3"
                 >
-                  <Mail className="w-5 h-5 mr-3" />
-                  suporte.cyberclass@gmail.com
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" />
+                  <span className="truncate">Email</span>
                 </Button>
               </div>
             </div>
 
             {/* Social Media */}
-            <div className="bg-card p-6 rounded-lg border border-border">
-              <h3 className="text-xl font-semibold mb-4">Redes Sociais</h3>
-              <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+            <div className="bg-card p-4 sm:p-6 rounded-lg border border-border">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Redes Sociais</h3>
+              <div className="space-y-3 sm:space-y-4">
+                <div className="grid grid-cols-2 gap-2 sm:gap-4">
                   <Button
                     variant="navy"
                     onClick={openInstagram}
-                    className="justify-start"
+                    className="justify-start text-xs sm:text-sm h-auto py-2 sm:py-2.5"
                   >
-                    <Instagram className="w-4 h-4 mr-2" />
-                    Instagram
+                    <Instagram className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 flex-shrink-0" />
+                    <span className="truncate">Instagram</span>
                   </Button>
                   <Button
                     variant="navy"
                     onClick={() => window.open('https://t.me/pdfstore_cyberclass_bot', '_blank')}
-                    className="justify-start"
+                    className="justify-start text-xs sm:text-sm h-auto py-2 sm:py-2.5"
                   >
-                    <Send className="w-4 h-4 mr-2" />
-                    PDF STORE
+                    <Send className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 flex-shrink-0" />
+                    <span className="truncate">PDF Store</span>
                   </Button>
                 </div>
                  <ServiceRequestModal />
@@ -170,38 +170,38 @@ const ContactSection = memo(() => {
             </div>
 
             {/* Business Hours */}
-            <div className="bg-card p-6 rounded-lg border border-border">
-              <h3 className="text-xl font-semibold mb-4 flex items-center">
-                <Clock className="w-5 h-5 mr-2 text-amber-neon" />
-                Horário de Atendimento
+            <div className="bg-card p-4 sm:p-6 rounded-lg border border-border">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 flex items-center">
+                <Clock className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-amber-neon flex-shrink-0" />
+                <span>Horário de Atendimento</span>
               </h3>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <div className="flex justify-between">
-                  <span>Segunda - Sexta:</span>
+              <div className="space-y-2 text-xs sm:text-sm text-muted-foreground">
+                <div className="flex justify-between gap-2">
+                  <span className="flex-shrink-0">Segunda - Sexta:</span>
                   <span>08:00 - 18:00</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Sábado:</span>
+                <div className="flex justify-between gap-2">
+                  <span className="flex-shrink-0">Sábado:</span>
                   <span>09:00 - 14:00</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Domingo:</span>
+                <div className="flex justify-between gap-2">
+                  <span className="flex-shrink-0">Domingo:</span>
                   <span>Emergências apenas</span>
                 </div>
               </div>
             </div>
 
             {/* Service Areas */}
-            <div className="bg-card p-6 rounded-lg border border-border">
-              <h3 className="text-xl font-semibold mb-4 flex items-center">
-                <MapPin className="w-5 h-5 mr-2 text-amber-neon" />
-                Atendimento Presencial
+            <div className="bg-card p-4 sm:p-6 rounded-lg border border-border">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 flex items-center">
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-amber-neon flex-shrink-0" />
+                <span>Atendimento Presencial</span>
               </h3>
-              <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="space-y-2 text-xs sm:text-sm text-muted-foreground">
                 <p>📍 Rio de Janeiro</p>
                 <p>📍 São Paulo</p>
-                <p>📍 Interior de SP (consulte disponibilidade)</p>
-                <p>🌐 Atendimento remoto em todo Brasil</p>
+                <p>📍 Interior de SP (consulte)</p>
+                <p>🌐 Remoto em todo Brasil</p>
               </div>
             </div>
           </motion.div>
