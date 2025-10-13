@@ -1,6 +1,7 @@
 import { memo, lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import { StarsBackground } from "@/components/ui/stars-background";
 
 // Lazy load components that are below the fold
 const AboutSection = lazy(() => import("@/components/AboutSection"));
@@ -18,24 +19,35 @@ const LoadingSpinner = () => (
 
 const Index = memo(() => {
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
-      <Navbar />
-      <Hero />
-      <Suspense fallback={<LoadingSpinner />}>
-        <AboutSection />
-      </Suspense>
-      <Suspense fallback={<LoadingSpinner />}>
-        <ServicesSection />
-      </Suspense>
-      <Suspense fallback={<LoadingSpinner />}>
-        <PortfolioShowcase />
-      </Suspense>
-      <Suspense fallback={<LoadingSpinner />}>
-        <EventsSection />
-      </Suspense>
-      <Suspense fallback={<LoadingSpinner />}>
-        <ContactSection />
-      </Suspense>
+    <div className="min-h-screen bg-background overflow-x-hidden relative">
+      {/* Stars Background - Fixed to cover entire viewport */}
+      <StarsBackground
+        starDensity={0.00025}
+        allStarsTwinkle={true}
+        minTwinkleSpeed={0.5}
+        maxTwinkleSpeed={1.5}
+        className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none"
+      />
+      
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <Suspense fallback={<LoadingSpinner />}>
+          <AboutSection />
+        </Suspense>
+        <Suspense fallback={<LoadingSpinner />}>
+          <ServicesSection />
+        </Suspense>
+        <Suspense fallback={<LoadingSpinner />}>
+          <PortfolioShowcase />
+        </Suspense>
+        <Suspense fallback={<LoadingSpinner />}>
+          <EventsSection />
+        </Suspense>
+        <Suspense fallback={<LoadingSpinner />}>
+          <ContactSection />
+        </Suspense>
+      </div>
     </div>
   );
 });
