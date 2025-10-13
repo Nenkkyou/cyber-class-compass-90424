@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, Brain, Zap } from "lucide-react";
 import { ShootingStars } from "@/components/ui/shooting-stars";
+import { StarsBackground } from "@/components/ui/stars-background";
 
 const Hero = memo(() => {
   const scrollToSection = (sectionId: string) => {
@@ -12,6 +13,15 @@ const Hero = memo(() => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-cyber-gradient overflow-hidden">
+      {/* Stars Background */}
+      <StarsBackground
+        starDensity={0.00025}
+        allStarsTwinkle={true}
+        minTwinkleSpeed={0.5}
+        maxTwinkleSpeed={1.5}
+        className="z-0"
+      />
+      
       {/* Shooting Stars Background */}
       <ShootingStars
         starColor="#FFC107"
