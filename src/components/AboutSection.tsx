@@ -115,8 +115,8 @@ const AboutSection = memo(() => {
               viewport={{ once: true }}
               className="text-center group"
             >
-              <div className="flex items-center justify-center w-12 h-12 bg-navy/20 rounded-full mb-4 mx-auto group-hover:bg-navy/40 transition-colors duration-300">
-                <value.icon className="w-6 h-6 text-navy" />
+              <div className="flex items-center justify-center w-12 h-12 bg-amber-neon/10 rounded-full mb-4 mx-auto group-hover:bg-amber-neon/20 transition-colors duration-300">
+                <value.icon className="w-6 h-6 text-amber-neon" />
               </div>
               <h4 className="text-lg font-semibold mb-3">{value.title}</h4>
               <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
