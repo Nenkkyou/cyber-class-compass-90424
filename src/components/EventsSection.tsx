@@ -8,7 +8,6 @@ const EventsSection = memo(() => {
   const agenda = [
     {
       number: 1,
-      time: "19:00 - 19:45",
       title: "Fundamentos de IA",
       description: "O que é Inteligência Artificial, Machine Learning e Deep Learning na prática. Construa uma base sólida para compreender o que está por trás das ferramentas modernas de IA.",
       icon: Brain,
@@ -16,7 +15,6 @@ const EventsSection = memo(() => {
     },
     {
       number: 2,
-      time: "19:45 - 20:30",
       title: "Ferramentas Essenciais",
       description: "ChatGPT é interessante, mas existem outras ferramentas que você precisa conhecer. Exploraremos desde o ChatGPT até plataformas que potencializam sua produtividade e criatividade com o apoio da automação.",
       icon: Target,
@@ -24,7 +22,6 @@ const EventsSection = memo(() => {
     },
     {
       number: 3,
-      time: "20:30 - 21:15",
       title: "Aplicações Práticas",
       description: "Como usar IA no marketing, vendas, produtividade e automação de tarefas.",
       icon: Lightbulb,
@@ -32,7 +29,6 @@ const EventsSection = memo(() => {
     },
     {
       number: 4,
-      time: "21:15 - 22:00",
       title: "Revisão Completa - Mapeamento",
       description: "Um mapa que conecta tudo o que você aprendeu durante a aula e transforma em ação para seus projetos profissionais.",
       icon: Rocket,
@@ -73,10 +69,10 @@ const EventsSection = memo(() => {
           className="text-center mb-12 gpu-accelerated"
         >
               <h4 className="text-2xl md:text-3xl font-bold text-black mb-4">
-                Agenda do Aulão
+                Aulas de IA 2026
               </h4>
               <p className="text-gray-600">
-                3 horas de conteúdo intensivo e prático, divididas em 4 módulos estratégicos
+                Conteúdo intensivo e prático, dividido em 4 módulos estratégicos
               </p>
             </m.div>
 
@@ -101,11 +97,8 @@ const EventsSection = memo(() => {
                     <div className={`w-12 h-12 ${item.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
                       <item.icon className="w-6 h-6 text-amber-neon" />
                     </div>
-                  <div className="flex-1">
-                      <p className="text-amber-neon text-sm font-semibold mb-1">
-                        {item.time}
-                      </p>
-                      <h5 className="text-xl font-bold text-black mb-2">
+                    <div className="flex-1">
+                      <h5 className="text-xl font-bold text-black">
                         {item.title}
                       </h5>
                     </div>
