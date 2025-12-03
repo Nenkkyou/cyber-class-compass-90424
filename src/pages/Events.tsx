@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -20,13 +20,14 @@ import {
 } from "lucide-react";
 import { StarsBackground } from "@/components/ui/stars-background";
 import Navbar from "@/components/Navbar";
+import WaitlistModal from "@/components/WaitlistModal";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   show: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" }
+    transition: { duration: 0.5, ease: "easeOut" as const }
   }
 };
 
@@ -141,12 +142,10 @@ const Events = memo(() => {
     }
   ];
 
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+
   const handleInscricao = () => {
-    // Scroll para a seção de contato ou abrir modal
-    const contactSection = document.getElementById('inscricao');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    setIsWaitlistOpen(true);
   };
 
   return (
@@ -407,15 +406,14 @@ const Events = memo(() => {
                   </div>
                 </div>
                 
-                <Link to="/#contato">
-                  <Button
-                    size="lg"
-                    className="text-lg px-12 py-7 bg-amber-neon hover:bg-amber-neon/90 text-black font-bold transition-transform duration-200 hover:scale-105 shadow-lg shadow-amber-neon/25"
-                  >
-                    <Sparkles className="w-5 h-5 mr-2" />
-                    Entrar na Lista de Espera
-                  </Button>
-                </Link>
+                <Button
+                  onClick={handleInscricao}
+                  size="lg"
+                  className="text-lg px-12 py-7 bg-amber-neon hover:bg-amber-neon/90 text-black font-bold transition-transform duration-200 hover:scale-105 shadow-lg shadow-amber-neon/25"
+                >
+                  <Sparkles className="w-5 h-5 mr-2" />
+                  Entrar na Lista de Espera
+                </Button>
                 
                 <p className="text-gray-500 text-sm mt-6">
                   Ao se inscrever, você receberá novidades e será notificado quando as inscrições abrirem.
@@ -434,6 +432,12 @@ const Events = memo(() => {
           </div>
         </footer>
       </div>
+
+      {/* Waitlist Modal */}
+      <WaitlistModal 
+        isOpen={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
     </div>
   );
 });
