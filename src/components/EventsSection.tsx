@@ -1,7 +1,8 @@
 import { memo } from "react";
 import { m } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Brain, Target, Lightbulb, Rocket } from "lucide-react";
+import { ArrowRight, Brain, Target, Lightbulb, Rocket } from "lucide-react";
 import { fadeUp, containerStagger, item as itemVariant, headingViewport, cardGridViewport, sectionViewport } from "@/lib/motion";
 
 const EventsSection = memo(() => {
@@ -35,10 +36,6 @@ const EventsSection = memo(() => {
       color: "bg-amber-neon/10"
     }
   ];
-
-  const handleLearnMore = () => {
-    window.open('https://www.cyberclasseventos.com.br', '_blank');
-  };
 
   return (
     <>
@@ -119,13 +116,14 @@ const EventsSection = memo(() => {
           viewport={sectionViewport}
           className="text-center gpu-accelerated"
         >
-            <Button
-              onClick={handleLearnMore}
-              className="text-lg px-8 py-6 bg-amber-neon hover:bg-amber-neon/90 text-black font-semibold transition-transform duration-200 hover:scale-105"
-            >
-              <ExternalLink className="w-5 h-5 mr-2" />
-              Saiba Mais
-            </Button>
+            <Link to="/events">
+              <Button
+                className="text-lg px-8 py-6 bg-amber-neon hover:bg-amber-neon/90 text-black font-semibold transition-transform duration-200 hover:scale-105"
+              >
+                <ArrowRight className="w-5 h-5 mr-2" />
+                Saiba Mais
+              </Button>
+            </Link>
           </m.div>
         </div>
       </section>

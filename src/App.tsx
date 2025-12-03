@@ -8,6 +8,7 @@ import { LazyMotion, domAnimation, MotionConfig } from "framer-motion";
 
 // Lazy load pages
 const Index = lazy(() => import("./pages/Index"));
+const Events = lazy(() => import("./pages/Events"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Optimize query client for performance
@@ -39,6 +40,7 @@ const App = memo(() => (
             <Suspense fallback={<LoadingFallback />}>
               <Routes>
                 <Route path="/" element={<Index />} />
+                <Route path="/events" element={<Events />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
