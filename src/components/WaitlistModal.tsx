@@ -123,8 +123,7 @@ const WaitlistModal = memo(({ isOpen, onClose }: WaitlistModalProps) => {
     setStatus('loading');
 
     try {
-      // @ts-expect-error - waitlist table exists but types are auto-generated
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('waitlist')
         .insert({
           full_name: formData.fullName.trim(),
@@ -198,8 +197,8 @@ const WaitlistModal = memo(({ isOpen, onClose }: WaitlistModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto bg-background border-white/10">
-        <DialogHeader>
+      <DialogContent className="sm:max-w-lg max-h-[90vh] bg-background border-white/10 overflow-hidden flex flex-col">
+        <DialogHeader className="flex-shrink-0">
           <DialogTitle className="text-2xl font-bold flex items-center gap-2 text-white">
             <Sparkles className="w-6 h-6 text-amber-neon" />
             Lista de Espera - IA 2026
@@ -249,14 +248,17 @@ const WaitlistModal = memo(({ isOpen, onClose }: WaitlistModalProps) => {
               </p>
             </m.div>
           ) : (
-            <m.form
-              key="form"
+            <m.div
+              key="form-wrapper"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onSubmit={handleSubmit}
-              className="space-y-5 mt-4"
+              className="flex-1 overflow-y-auto pr-2 -mr-2 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10 hover:scrollbar-thumb-white/20"
             >
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-4 pb-2"
+              >
               {/* Nome Completo */}
               <div className="space-y-2">
                 <Label htmlFor="fullName" className="flex items-center gap-2 text-white">
@@ -426,7 +428,8 @@ const WaitlistModal = memo(({ isOpen, onClose }: WaitlistModalProps) => {
               <p className="text-xs text-gray-500 text-center">
                 Seus dados estão seguros. Não compartilhamos com terceiros.
               </p>
-            </m.form>
+              </form>
+            </m.div>
           )}
         </AnimatePresence>
       </DialogContent>

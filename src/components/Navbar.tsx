@@ -1,24 +1,43 @@
 import { useState, memo, useCallback } from "react";
 import { m, AnimatePresence } from "framer-motion";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Navbar = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === '/';
 
   const menuItems = [
-    { label: "Sobre", href: "#sobre" },
-    { label: "Serviços", href: "#servicos" },
-    { label: "Portfólio", href: "#portfolio" },
-    { label: "PDFs", href: "#pdfs" },
-    { label: "Contato", href: "#contato" },
+    { label: "Sobre", href: "#sobre", isSection: true },
+    { label: "Serviços", href: "#servicos", isSection: true },
+    { label: "Portfólio", href: "#portfolio", isSection: true },
+    { label: "PDFs", href: "#pdfs", isSection: true },
+    { label: "Eventos", href: "/events", isSection: false },
+    { label: "Contato", href: "#contato", isSection: true },
   ];
 
-  const scrollToSection = useCallback((sectionId: string) => {
-    const element = document.getElementById(sectionId.replace('#', ''));
-    element?.scrollIntoView({ behavior: 'smooth' });
+  const handleNavClick = useCallback((item: typeof menuItems[0]) => {
     setIsOpen(false);
-  }, []);
+    
+    if (!item.isSection) {
+      // Navegar para outra página
+      navigate(item.href);
+      return;
+    }
+    
+    if (!isHomePage) {
+      // Se não está na home, navegar para home com hash
+      navigate('/' + item.href);
+      return;
+    }
+    
+    // Se está na home, scroll suave
+    const element = document.getElementById(item.href.replace('#', ''));
+    element?.scrollIntoView({ behavior: 'smooth' });
+  }, [isHomePage, navigate]);
 
   return (
     <m.nav
@@ -50,8 +69,12 @@ const Navbar = memo(() => {
             {menuItems.map((item) => (
               <button
                 key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-amber-neon transition-colors duration-300"
+                onClick={() => handleNavClick(item)}
+                className={`transition-colors duration-300 ${
+                  !item.isSection && location.pathname === item.href
+                    ? 'text-amber-neon font-semibold'
+                    : 'text-foreground hover:text-amber-neon'
+                }`}
               >
                 {item.label}
               </button>
@@ -85,8 +108,12 @@ const Navbar = memo(() => {
                 {menuItems.map((item) => (
                   <button
                     key={item.label}
-                    onClick={() => scrollToSection(item.href)}
-                    className="block w-full text-left px-4 py-2 text-foreground hover:text-amber-neon hover:bg-muted transition-colors duration-300"
+                    onClick={() => handleNavClick(item)}
+                    className={`block w-full text-left px-4 py-3 transition-colors duration-300 ${
+                      !item.isSection && location.pathname === item.href
+                        ? 'text-amber-neon font-semibold bg-amber-neon/10'
+                        : 'text-foreground hover:text-amber-neon hover:bg-muted'
+                    }`}
                   >
                     {item.label}
                   </button>
