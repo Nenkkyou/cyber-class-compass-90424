@@ -1,4 +1,5 @@
-import { memo, lazy, Suspense } from "react";
+import { memo, lazy, Suspense, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import { StarsBackground } from "@/components/ui/stars-background";
@@ -18,6 +19,22 @@ const LoadingSpinner = () => (
 );
 
 const Index = memo(() => {
+  const location = useLocation();
+
+  // Handle hash navigation when coming from another page
+  useEffect(() => {
+    if (location.hash) {
+      // Pequeno delay para garantir que os componentes lazy-loaded estejam montados
+      const timer = setTimeout(() => {
+        const element = document.getElementById(location.hash.replace('#', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location.hash]);
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden relative">
       {/* Stars Background - Fixed to cover entire viewport */}
