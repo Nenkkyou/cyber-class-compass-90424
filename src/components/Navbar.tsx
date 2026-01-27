@@ -14,7 +14,7 @@ const Navbar = memo(() => {
     { label: "Sobre", href: "#sobre", isSection: true },
     { label: "Serviços", href: "#servicos", isSection: true },
     { label: "Portfólio", href: "#portfolio", isSection: true },
-    { label: "PDFs", href: "#pdfs", isSection: true },
+    { label: "Nossa IA", href: "/ia", isSection: false },
     { label: "Eventos", href: "/events", isSection: false },
     { label: "Contato", href: "#contato", isSection: true },
   ];

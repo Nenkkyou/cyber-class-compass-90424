@@ -8,6 +8,7 @@ import { StarsBackground } from "@/components/ui/stars-background";
 const AboutSection = lazy(() => import("@/components/AboutSection"));
 const ServicesSection = lazy(() => import("@/components/ServicesSection"));
 const PortfolioShowcase = lazy(() => import("@/components/PortfolioShowcase"));
+const AISection = lazy(() => import("@/components/AISection"));
 const EventsSection = lazy(() => import("@/components/EventsSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
 
@@ -54,6 +55,9 @@ const Index = memo(() => {
         </Suspense>
         <Suspense fallback={<LoadingSpinner />}>
           <ServicesSection />
+        </Suspense>
+        <Suspense fallback={<LoadingSpinner />}>
+          <AISection />
         </Suspense>
         <Suspense fallback={<LoadingSpinner />}>
           <PortfolioShowcase />
