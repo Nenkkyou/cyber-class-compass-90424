@@ -159,11 +159,11 @@ const ContactSection = memo(() => {
                   </Button>
                   <Button
                     variant="navy"
-                    onClick={() => window.open('https://t.me/pdfstore_cyberclass_bot', '_blank')}
+                    onClick={() => window.location.href = '/ia'}
                     className="justify-start text-xs sm:text-sm h-auto py-2 sm:py-2.5"
                   >
                     <Send className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 flex-shrink-0" />
-                    <span className="truncate">PDF Store</span>
+                    <span className="truncate">CyberClass AI</span>
                   </Button>
                 </div>
                  <ServiceRequestModal />

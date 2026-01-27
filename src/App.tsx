@@ -9,6 +9,7 @@ import { LazyMotion, domAnimation, MotionConfig } from "framer-motion";
 // Lazy load pages
 const Index = lazy(() => import("./pages/Index"));
 const Events = lazy(() => import("./pages/Events"));
+const AIChat = lazy(() => import("./pages/AIChat"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Optimize query client for performance
@@ -41,6 +42,7 @@ const App = memo(() => (
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/events" element={<Events />} />
+                <Route path="/ia" element={<AIChat />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>

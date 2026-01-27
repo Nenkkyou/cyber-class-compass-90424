@@ -92,13 +92,14 @@ const ServicesSection = memo(() => {
       telegram: "@CyberClass_Company"
     },
     {
-      icon: FileText,
-      title: "PDF Store",
-      description: "Materiais originais, guias práticos e exercícios exclusivos",
-      details: "Loja de materiais digitais com conteúdo exclusivo da CyberClass. Guias práticos, exercícios, tutoriais e materiais de estudo desenvolvidos por nossa equipe.",
-      features: ["Materiais originais", "Guias práticos", "Exercícios exclusivos", "Tutoriais passo a passo", "Atualizações constantes"],
+      icon: Brain,
+      title: "CyberClass AI",
+      description: "Assistente virtual inteligente para tirar suas dúvidas",
+      details: "Nossa inteligência artificial está disponível 24/7 para responder suas dúvidas sobre cursos, serviços e tecnologia. Powered by GPT-4o Mini.",
+      features: ["Disponível 24 horas", "Respostas instantâneas", "Dúvidas sobre cursos", "Informações sobre serviços", "Orientação tecnológica"],
       whatsapp: "552199974421",
-      telegram: "@pdfstore_cyberclass_bot"
+      telegram: "/ia",
+      isAI: true
     }
   ];
 
@@ -186,15 +187,15 @@ const ServicesSection = memo(() => {
                       </div>
 
                       <div className="flex gap-2 pt-4">
-                        {service.title === "PDF Store" ? (
+                        {service.title === "CyberClass AI" ? (
                           <Button
-                            variant="navy"
+                            variant="glow"
                             size="sm"
-                            onClick={() => openTelegram(service.telegram)}
+                            onClick={() => window.location.href = '/ia'}
                             className="w-full"
                           >
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            Telegram
+                            <Brain className="w-4 h-4 mr-2" />
+                            Falar com a IA
                           </Button>
                         ) : (
                           <ServiceRequestModal 
